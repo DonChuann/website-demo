@@ -3,6 +3,7 @@ import './App.css';
 import InputField from './components/InputField';
 import { Todo } from "./model"
 import TodoList from './components/TodoList';
+import { TodoReducer } from './components/TodoReducer';
 
 
 const App: React.FC = () => {
@@ -14,7 +15,7 @@ const App: React.FC = () => {
     e.preventDefault();
 
     if (todo) {
-      setTodos([...todos, {id: Date.now(), todo, isDone: false}])
+      setTodos(TodoReducer(todos, {type: 'add', payload: todo}))
       setTodo("")
     }
   };

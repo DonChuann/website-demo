@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Todo } from '../model';
 import { AiFillEdit, AiFillDelete, AiOutlineCheck } from 'react-icons/ai';
 import './styles.css'
+import { TodoReducer } from './TodoReducer';
+
 
 type Props = {
     todo:Todo
@@ -15,9 +17,7 @@ const SingleTodo = ({todo, todos, setTodos}: Props) => {
     const [editTodo, setEditTodo] = useState<string>(todo.todo);
 
     const handleDone = (id:number) => {
-        setTodos(todos.map((todo) =>
-            todo.id === id ? {...todo, isDone: !todo.isDone } : todo)
-        )
+        setTodos(TodoReducer(todos, {type: 'done', payload: id}))
     };
 
     const handleDelete = (id:number) => {
