@@ -19,8 +19,6 @@ const App: React.FC = () => {
     }
   };
 
-  console.log(todo);
-
   return (
     <div className="App">
       <span className='heading'>Taskify</span>
