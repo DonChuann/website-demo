@@ -85,6 +85,15 @@
   font-size: 25px;
   cursor: pointer;
 }
+.drag {
+  box-shadow: 0 0 20px black;
+}
+.dragactive{
+background-color: rgb(0, 234, 255);
+}
+.dragcomplete{
+  background-color: rgb(116, 255, 47);
+  }
 
 @media (max-width: 700px) {
   .input {
@@ -99,3 +108,5 @@
     flex-direction: column;
   }
 }
+
+
